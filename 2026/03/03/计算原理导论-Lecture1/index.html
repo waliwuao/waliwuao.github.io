@@ -21,24 +21,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"waliwuao.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="QQ: 1276672206">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Wally Hao&#39;s Blog">
-<meta property="og:url" content="https://waliwuao.github.io/archives/2026/03/index.html">
+    <meta name="description" content="Course OverviewThe course is structured into two fundamental pillars that define the limits and efficiency of mathematical logic and machine processing. Part I: Automata &amp; Computability Boundaries">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Introduction to Theory of Computation - Lecture 1">
+<meta property="og:url" content="https://waliwuao.github.io/2026/03/03/%E8%AE%A1%E7%AE%97%E5%8E%9F%E7%90%86%E5%AF%BC%E8%AE%BA-Lecture1/index.html">
 <meta property="og:site_name" content="Wally Hao&#39;s Blog">
-<meta property="og:description" content="QQ: 1276672206">
+<meta property="og:description" content="Course OverviewThe course is structured into two fundamental pillars that define the limits and efficiency of mathematical logic and machine processing. Part I: Automata &amp; Computability Boundaries">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-03-03T08:15:58.000Z">
+<meta property="article:modified_time" content="2026-03-03T09:36:40.732Z">
 <meta property="article:author" content="Wally Hao">
+<meta property="article:tag" content="计算原理导论">
+<meta property="article:tag" content="课堂笔记">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://waliwuao.github.io/archives/2026/03/">
+<link rel="canonical" href="https://waliwuao.github.io/2026/03/03/%E8%AE%A1%E7%AE%97%E5%8E%9F%E7%90%86%E5%AF%BC%E8%AE%BA-Lecture1/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"archives/2026/03/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://waliwuao.github.io/2026/03/03/%E8%AE%A1%E7%AE%97%E5%8E%9F%E7%90%86%E5%AF%BC%E8%AE%BA-Lecture1/","path":"2026/03/03/计算原理导论-Lecture1/","title":"Introduction to Theory of Computation - Lecture 1"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>归档 | Wally Hao's Blog</title>
+<title>Introduction to Theory of Computation - Lecture 1 | Wally Hao's Blog</title>
   
 
 
@@ -92,7 +96,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">Wally Hao's Blog</h1>
+      <p class="site-title">Wally Hao's Blog</p>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description"><strong>Now</strong> is better than <strong>never</strong>.<br>Although <strong>never</strong> is often better than <strong>right now</strong>.</p>
@@ -119,7 +123,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -132,6 +136,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Course-Overview"><span class="nav-number">1.</span> <span class="nav-text">Course Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Part-I-Automata-Computability"><span class="nav-number">1.1.</span> <span class="nav-text">Part I: Automata &amp; Computability</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Part-II-Computational-Complexity"><span class="nav-number">1.2.</span> <span class="nav-text">Part II: Computational Complexity</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-1-Foundations"><span class="nav-number">2.</span> <span class="nav-text">Lecture 1: Foundations</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#FSA-Finite-States-Automata"><span class="nav-number">2.1.</span> <span class="nav-text">FSA(Finite States Automata)</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -181,69 +186,125 @@
 
     </div>
 
-    <div class="main-inner archive posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
-  
-  
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 2 篇日志。 继续努力。</span>
-      </div>
 
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://waliwuao.github.io/2026/03/03/%E8%AE%A1%E7%AE%97%E5%8E%9F%E7%90%86%E5%AF%BC%E8%AE%BA-Lecture1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Wally Hao">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wally Hao's Blog">
+      <meta itemprop="description" content="QQ: 1276672206">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Introduction to Theory of Computation - Lecture 1 | Wally Hao's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Introduction to Theory of Computation - Lecture 1
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2026<span class="collection-year-count">2</span></span>
+
+      <time title="创建时间：2026-03-03 16:15:58 / 修改时间：17:36:40" itemprop="dateCreated datePublished" datetime="2026-03-03T16:15:58+08:00">2026-03-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">课堂笔记</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="Course-Overview"><a href="#Course-Overview" class="headerlink" title="Course Overview"></a>Course Overview</h2><p>The course is structured into two fundamental pillars that define the limits and efficiency of mathematical logic and machine processing.</p>
+<h3 id="Part-I-Automata-Computability"><a href="#Part-I-Automata-Computability" class="headerlink" title="Part I: Automata &amp; Computability"></a>Part I: Automata &amp; Computability</h3><ul>
+<li><strong>Boundaries of Computation</strong>: Defining which problems are theoretically “computable” and which are not.</li>
+<li><strong>Theoretical Framework</strong>: Understanding the fundamental limits of logic and machines.</li>
+<li><strong>Computability vs. Feasibility</strong>: Distinguishing between problems that can be solved <em>in principle</em> versus those that cannot be solved within finite or reasonable resources (time and space).</li>
+</ul>
+<h3 id="Part-II-Computational-Complexity"><a href="#Part-II-Computational-Complexity" class="headerlink" title="Part II: Computational Complexity"></a>Part II: Computational Complexity</h3><ul>
+<li><strong>Efficiency Analysis</strong>: Developing a rigorous understanding of what constitutes “computational efficiency.”</li>
+<li><strong>Tractability</strong>: Identifying problems that are solvable using realistic and limited resources.</li>
+<li><strong>Complexity Hierarchy</strong>: Investigating the inherent difficulty of problems and what makes certain tasks fundamentally harder than others.</li>
+</ul>
+<hr>
+<span id="more"></span>
+
+<h2 id="Lecture-1-Foundations"><a href="#Lecture-1-Foundations" class="headerlink" title="Lecture 1: Foundations"></a>Lecture 1: Foundations</h2><h3 id="FSA-Finite-States-Automata"><a href="#FSA-Finite-States-Automata" class="headerlink" title="FSA(Finite States Automata)"></a>FSA(Finite States Automata)</h3><p>A <strong>finite automaton</strong> $M$ is defined as a 5-tuple $(Q, \Sigma, \delta, q_0, F)$ consisting of:</p>
+<ul>
+<li>$Q$ : A finite set of <strong>states</strong>.</li>
+<li>$\Sigma$ : A finite set of <strong>alphabet symbols</strong>.</li>
+<li>$\delta$ : The <strong>transition function</strong>, defined as $\delta: Q \times \Sigma \to Q$.<ul>
+<li>The notation $\delta(q, a) &#x3D; r$ indicates that when the machine is in state $q$ and receives input symbol $a$, it moves to state $r$.</li>
+</ul>
+</li>
+<li>$q_0$ : The <strong>start state</strong>, where $q_0 \in Q$.</li>
+<li>$F$ : The <strong>set of accept states</strong>, where $F \subseteq Q$.</li>
+</ul>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2026-03-03T16:15:58+08:00"
-              content="2026-03-03">
-          03-03
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2026/03/03/%E8%AE%A1%E7%AE%97%E5%8E%9F%E7%90%86%E5%AF%BC%E8%AE%BA-Lecture1/" itemprop="url">
-            <span itemprop="name">Introduction to Theory of Computation - Lecture 1</span>
-          </a>
-      </div>
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E8%AE%A1%E7%AE%97%E5%8E%9F%E7%90%86%E5%AF%BC%E8%AE%BA/" rel="tag"># 计算原理导论</a>
+              <a href="/tags/%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/" rel="tag"># 课堂笔记</a>
+          </div>
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2026/03/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86-Lecture1/" rel="prev" title="从 Verilog 到硬件构造语言 SpinalHDL">
+                  <i class="fa fa-angle-left"></i> 从 Verilog 到硬件构造语言 SpinalHDL
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2026-03-03T10:37:58+08:00"
-              content="2026-03-03">
-          03-03
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2026/03/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86-Lecture1/" itemprop="url">
-            <span itemprop="name">从 Verilog 到硬件构造语言 SpinalHDL</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
+</div>
 
 
-    </div>
-  </div>
-  
-  
-  
+
+
+
 
 </div>
   </main>
