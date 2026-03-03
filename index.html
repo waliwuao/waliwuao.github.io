@@ -150,6 +150,16 @@
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
   </nav>
 </div>
   <div class="links-of-author animated">
@@ -181,7 +191,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://waliwuao.github.io/2026/03/02/Test-My-Blog/">
+    <link itemprop="mainEntityOfPage" href="https://waliwuao.github.io/2026/03/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86-Lecture1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -199,7 +209,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2026/03/02/Test-My-Blog/" class="post-title-link" itemprop="url">Test My Blog</a>
+          <a href="/2026/03/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86-Lecture1/" class="post-title-link" itemprop="url">计算机组成原理 - Lecture 1：从 Verilog 到硬件构造语言 SpinalHDL</a>
         </h2>
 
         <div class="post-meta-container">
@@ -211,7 +221,16 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2026-03-02 14:10:59 / 修改时间：15:19:40" itemprop="dateCreated datePublished" datetime="2026-03-02T14:10:59+08:00">2026-03-02</time>
+      <time title="创建时间：2026-03-03 10:37:58 / 修改时间：15:45:29" itemprop="dateCreated datePublished" datetime="2026-03-03T10:37:58+08:00">2026-03-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">课堂笔记</span></a>
+        </span>
     </span>
 
   
@@ -224,8 +243,25 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>test comments</p>
-
+          <h2 id="1-技术背景：Verilog-与高级硬件构造语言"><a href="#1-技术背景：Verilog-与高级硬件构造语言" class="headerlink" title="1. 技术背景：Verilog 与高级硬件构造语言"></a>1. 技术背景：Verilog 与高级硬件构造语言</h2><p>对于具备数字逻辑基础及 Java 开发经验的开发者而言，Verilog 是实现硬件电路的标准手段。然而，随着设计复杂度的提升，传统 HDL 在抽象能力和工程化管理上的局限性日益凸显。</p>
+<p><strong>Scala</strong> 是一门运行在 JVM 上的多范式编程语言，可以被视为 Java Pro。它不仅能够无缝调用 Java 库，更引入了先进的语法设计与编程范式，为硬件描述提供了更高的抽象维度。</p>
+<p>Scala 相较于 Java 的核心技术优势:</p>
+<ul>
+<li><strong>简洁的数据建模 (Case Classes)</strong>：支持样板代码（如构造函数、<code>equals</code>、<code>toString</code> 等）的自动生成，并通过强力类型推断减少显式声明。</li>
+<li><strong>深度的函数式编程支持</strong>：强调不可变性（Immutable），通过 <code>val</code> 常量管理状态。这与硬件电路中信号流向的确定性天然契合，有效降低了并发逻辑中的竞态风险。</li>
+<li><strong>高级模式匹配 (Pattern Matching)</strong>：支持对数值、类型及结构进行解构匹配，极大简化了复杂有限状态机 (FSM) 的构建流程。</li>
+<li><strong>灵活的组合机制 (Traits)</strong>：相较于 Java 的接口，Scala 的 Trait 支持具体的实现混入，规避了多重继承下的冲突问题。</li>
+<li><strong>领域特定语言 (DSL) 构建能力</strong>：支持运算符重载与隐式转换，允许开发者自定义如 <code>===</code>、<code>:=</code>、<code>&lt;&gt;</code> 等符合硬件语义的操作符。</li>
+</ul>
+<hr>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2026/03/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86-Lecture1/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
