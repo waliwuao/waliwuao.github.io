@@ -68,11 +68,129 @@
 
 
 
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
+
+
 
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
-</head>
+<style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
   <div class="headband"></div>
@@ -221,7 +339,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2026-03-03 16:15:58 / 修改时间：17:36:40" itemprop="dateCreated datePublished" datetime="2026-03-03T16:15:58+08:00">2026-03-03</time>
+      <time title="创建时间：2026-03-03 16:15:58 / 修改时间：17:48:04" itemprop="dateCreated datePublished" datetime="2026-03-03T16:15:58+08:00">2026-03-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -229,7 +347,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">课堂笔记</span></a>
+          <a href="/categories/%E8%AE%A1%E7%AE%97%E5%8E%9F%E7%90%86%E5%AF%BC%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">计算原理导论</span></a>
         </span>
     </span>
 
@@ -244,7 +362,7 @@
     
     <div class="post-body" itemprop="articleBody">
           <h2 id="Course-Overview"><a href="#Course-Overview" class="headerlink" title="Course Overview"></a>Course Overview</h2><p>The course is structured into two fundamental pillars that define the limits and efficiency of mathematical logic and machine processing.</p>
-<h3 id="Part-I-Automata-Computability"><a href="#Part-I-Automata-Computability" class="headerlink" title="Part I: Automata &amp; Computability"></a>Part I: Automata &amp; Computability</h3><ul>
+<h3 id="Part-I-Automata-Computability"><a href="#Part-I-Automata-Computability" class="headerlink" title="Part I: Automata & Computability"></a>Part I: Automata &amp; Computability</h3><ul>
 <li><strong>Boundaries of Computation</strong>: Defining which problems are theoretically “computable” and which are not.</li>
 <li><strong>Theoretical Framework</strong>: Understanding the fundamental limits of logic and machines.</li>
 <li><strong>Computability vs. Feasibility</strong>: Distinguishing between problems that can be solved <em>in principle</em> versus those that cannot be solved within finite or reasonable resources (time and space).</li>
@@ -318,7 +436,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2026-03-03 10:37:58 / 修改时间：17:03:11" itemprop="dateCreated datePublished" datetime="2026-03-03T10:37:58+08:00">2026-03-03</time>
+      <time title="创建时间：2026-03-03 10:37:58 / 修改时间：17:42:20" itemprop="dateCreated datePublished" datetime="2026-03-03T10:37:58+08:00">2026-03-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -326,7 +444,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%8A%80%E6%9C%AF%E6%8B%93%E5%B1%95/" itemprop="url" rel="index"><span itemprop="name">技术拓展</span></a>
+          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">计算机组成原理</span></a>
         </span>
     </span>
 
