@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 8.1.1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"waliwuao.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="前言Conda 是一款开源的包管理与环境管理工具。它不仅能轻松安装、更新、卸载 Python 库，更能创建相互隔离的虚拟环境，确保不同项目使用不同版本的依赖，从而避免版本冲突。无论是数据分析、机器学习还是日常开发，Conda 都是高效管理开发环境的利器。 对于初学者，建议安装更轻量的 Miniconda，它已完全覆盖日常开发的核心需求。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="小白也能懂的 Conda 入门指南">
+<meta property="og:url" content="https://waliwuao.github.io/2026/03/06/%E5%B0%8F%E7%99%BD%E9%83%BD%E8%83%BD%E6%87%82%E7%9A%84conda%E6%95%99%E7%A8%8B/index.html">
+<meta property="og:site_name" content="Wally Hao&#39;s Blog">
+<meta property="og:description" content="前言Conda 是一款开源的包管理与环境管理工具。它不仅能轻松安装、更新、卸载 Python 库，更能创建相互隔离的虚拟环境，确保不同项目使用不同版本的依赖，从而避免版本冲突。无论是数据分析、机器学习还是日常开发，Conda 都是高效管理开发环境的利器。 对于初学者，建议安装更轻量的 Miniconda，它已完全覆盖日常开发的核心需求。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-03-06T08:15:46.000Z">
+<meta property="article:modified_time" content="2026-03-06T09:03:00.744Z">
+<meta property="article:author" content="Wally Hao">
+<meta property="article:tag" content="conda">
+<meta property="article:tag" content="小白都能懂">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://waliwuao.github.io/2026/03/06/%E5%B0%8F%E7%99%BD%E9%83%BD%E8%83%BD%E6%87%82%E7%9A%84conda%E6%95%99%E7%A8%8B/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://waliwuao.github.io/2026/03/06/%E5%B0%8F%E7%99%BD%E9%83%BD%E8%83%BD%E6%87%82%E7%9A%84conda%E6%95%99%E7%A8%8B/","path":"2026/03/06/小白都能懂的conda教程/","title":"小白也能懂的 Conda 入门指南"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>小白也能懂的 Conda 入门指南 | Wally Hao's Blog</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.10.1/mermaid.min.js","integrity":"sha256-BmQmdWDS8X2OTbrwELWK366LV6escyWhHHe0XCTU/Hk="}}</script>
+  <script src="/js/third-party/tags/mermaid.js" defer></script>
+
+
+  <script src="/js/third-party/fancybox.js" defer></script>
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Wally Hao's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description"><strong>Now</strong> is better than <strong>never</strong>.<br>Although <strong>never</strong> is often better than <strong>right now</strong>.</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81-Conda-%E7%9A%84%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text">一、 Conda 的安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4"><span class="nav-number">2.1.</span> <span class="nav-text">安装步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AA%8C%E8%AF%81%E5%AE%89%E8%A3%85"><span class="nav-number">2.2.</span> <span class="nav-text">验证安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81-%E9%85%8D%E7%BD%AE%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F%E6%BA%90"><span class="nav-number">3.</span> <span class="nav-text">二、 配置国内镜像源</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80%EF%BC%9A%E5%91%BD%E4%BB%A4%E8%A1%8C%E9%85%8D%E7%BD%AE%EF%BC%88%E6%8E%A8%E8%8D%90%EF%BC%89"><span class="nav-number">3.1.</span> <span class="nav-text">方法一：命令行配置（推荐）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C%EF%BC%9A%E6%89%8B%E5%8A%A8%E7%BC%96%E8%BE%91%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">3.2.</span> <span class="nav-text">方法二：手动编辑配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AA%8C%E8%AF%81%E9%85%8D%E7%BD%AE"><span class="nav-number">3.3.</span> <span class="nav-text">验证配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81-%E5%B8%B8%E7%94%A8-Conda-%E5%91%BD%E4%BB%A4"><span class="nav-number">4.</span> <span class="nav-text">三、 常用 Conda 命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81-%E7%89%B9%E5%88%AB%E6%8F%90%E7%A4%BA"><span class="nav-number">5.</span> <span class="nav-text">四、 特别提示</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Wally Hao"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Wally Hao</p>
+  <div class="site-description" itemprop="description">QQ: 1276672206</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/waliwuao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;waliwuao" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:waliwuao@gmail.com" title="E-Mail → mailto:waliwuao@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://waliwuao.github.io/2026/03/06/%E5%B0%8F%E7%99%BD%E9%83%BD%E8%83%BD%E6%87%82%E7%9A%84conda%E6%95%99%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Wally Hao">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wally Hao's Blog">
+      <meta itemprop="description" content="QQ: 1276672206">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="小白也能懂的 Conda 入门指南 | Wally Hao's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          小白也能懂的 Conda 入门指南
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2026-03-06 16:15:46 / 修改时间：17:03:00" itemprop="dateCreated datePublished" datetime="2026-03-06T16:15:46+08:00">2026-03-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%B0%8F%E7%99%BD%E9%83%BD%E8%83%BD%E6%87%82/" itemprop="url" rel="index"><span itemprop="name">小白都能懂</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Conda 是一款开源的包管理与环境管理工具。它不仅能轻松安装、更新、卸载 Python 库，更能创建相互隔离的虚拟环境，确保不同项目使用不同版本的依赖，从而避免版本冲突。无论是数据分析、机器学习还是日常开发，Conda 都是高效管理开发环境的利器。</p>
+<p>对于初学者，建议安装更轻量的 <strong>Miniconda</strong>，它已完全覆盖日常开发的核心需求。</p>
+<span id="more"></span>
+
+<h2 id="一、-Conda-的安装"><a href="#一、-Conda-的安装" class="headerlink" title="一、 Conda 的安装"></a>一、 Conda 的安装</h2><p>在正式安装前，请明确你的开发需求：</p>
+<ul>
+<li><strong>VS Code 用户</strong>：Conda 是 Python 开发的必备工具。</li>
+<li><strong>PyCharm 用户</strong>：PyCharm 内置了 <code>venv</code>，若偏好使用 Conda，可在创建项目时选择 Conda 环境，软件会自动指引完成安装。</li>
+</ul>
+<h3 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h3><ol>
+<li><strong>下载安装包</strong>：访问 <a target="_blank" rel="noopener" href="https://www.anaconda.com/download">Anaconda 官网</a> 进行下载（需注册账号，建议使用 GitHub 快速登录）。</li>
+<li><strong>初始化配置</strong>：安装过程中，若提示「是否在终端默认初始化」，请务必选择 <strong>Yes</strong>。</li>
+<li><strong>环境变量</strong>：确保安装程序已将 Miniconda 的路径添加到系统环境变量中。</li>
+</ol>
+<h3 id="验证安装"><a href="#验证安装" class="headerlink" title="验证安装"></a>验证安装</h3><p>打开终端（Windows 可按 <code>Win + R</code> 输入 <code>cmd</code>），若命令行路径前出现 <code>(base)</code> 标识，即表示安装成功。若未显示，可尝试手动运行 <code>conda activate</code> 激活。</p>
+<blockquote>
+<p><strong>提示</strong>：Windows 系统拥有多种终端（如 PowerShell, CMD）。若在 VS Code 的集成终端中未显示 <code>(base)</code>，请点击终端面板右上角的下拉箭头，切换不同的终端类型尝试。</p>
+</blockquote>
+<hr>
+<h2 id="二、-配置国内镜像源"><a href="#二、-配置国内镜像源" class="headerlink" title="二、 配置国内镜像源"></a>二、 配置国内镜像源</h2><p>由于官方源服务器位于海外，国内访问速度较慢。建议安装后立即配置国内镜像源（以清华大学镜像站为例），以提升包下载速度。</p>
+<h3 id="方法一：命令行配置（推荐）"><a href="#方法一：命令行配置（推荐）" class="headerlink" title="方法一：命令行配置（推荐）"></a>方法一：命令行配置（推荐）</h3><p>在终端依次执行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge</span><br><span class="line">conda config --<span class="built_in">set</span> show_channel_urls <span class="built_in">yes</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="方法二：手动编辑配置文件"><a href="#方法二：手动编辑配置文件" class="headerlink" title="方法二：手动编辑配置文件"></a>方法二：手动编辑配置文件</h3><ol>
+<li>运行 <code>conda config --show config_file</code> 查看配置文件路径（通常为用户目录下的 <code>.condarc</code>）。</li>
+<li>用记事本打开该文件，替换为以下内容：</li>
+</ol>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">channels:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge</span></span><br><span class="line"><span class="attr">show_channel_urls:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="验证配置"><a href="#验证配置" class="headerlink" title="验证配置"></a>验证配置</h3><p>执行 <code>conda config --show channels</code>，若输出列表中包含上述清华源地址，则配置成功。</p>
+<blockquote>
+<p><strong>更多镜像源</strong>：</p>
+<ul>
+<li>阿里云：<code>https://mirrors.aliyun.com/anaconda/pkgs/main</code></li>
+<li>中科大：<code>https://mirrors.ustc.edu.cn/anaconda/pkgs/main</code></li>
+</ul>
+</blockquote>
+<hr>
+<h2 id="三、-常用-Conda-命令"><a href="#三、-常用-Conda-命令" class="headerlink" title="三、 常用 Conda 命令"></a>三、 常用 Conda 命令</h2><p>掌握以下三条基础命令，即可应对 90% 的场景：</p>
+<p><strong>1. 创建环境</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">conda create -n &lt;环境名称&gt; python=&lt;版本号&gt;</span><br><span class="line"><span class="comment"># 示例：创建名为 myVenv 的环境，指定 Python 版本为 3.10</span></span><br><span class="line"><span class="comment"># conda create -n myVenv python=3.10</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>2. 激活环境</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda activate &lt;环境名称&gt;</span><br><span class="line"><span class="comment"># 示例：conda activate myVenv</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>3. 退出环境</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda deactivate</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="四、-特别提示"><a href="#四、-特别提示" class="headerlink" title="四、 特别提示"></a>四、 特别提示</h2><ul>
+<li><strong>关于 pip 的使用</strong>：在激活 Conda 环境的状态下直接使用 <code>pip</code>，安装的包会自动归入当前 Conda 环境。此外，Conda 环境已内置 <code>pip</code>，无需额外安装。</li>
+<li><strong>终端生效范围</strong>：激活的 Conda 环境仅在当前终端窗口有效。若打开新的终端，需重新执行 <code>conda activate</code>。</li>
+<li><strong>VS Code 的运行方式</strong>：VS Code 的「Code Runner」插件默认使用系统全局 Python。若需在特定 Conda 环境下运行代码，请确保在终端中先执行 <code>conda activate</code>，随后在该终端内运行 <code>python &lt;文件名.py&gt;</code>。</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%B0%8F%E7%99%BD%E9%83%BD%E8%83%BD%E6%87%82/" rel="tag"># 小白都能懂</a>
+              <a href="/tags/conda/" rel="tag"># conda</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2026/03/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86-Lecture2/" rel="prev" title="现代 FPGA 开发工作流配置：SpinalHDL + OSS CAD Suite + Vivado">
+                  <i class="fa fa-angle-left"></i> 现代 FPGA 开发工作流配置：SpinalHDL + OSS CAD Suite + Vivado
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Wally Hao | All Rights Reserved</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>
