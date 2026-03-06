@@ -339,7 +339,7 @@ mjx-container[display="true"] + br {
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2026-03-06 16:15:46 / 修改时间：17:04:02" itemprop="dateCreated datePublished" datetime="2026-03-06T16:15:46+08:00">2026-03-06</time>
+      <time title="创建时间：2026-03-06 16:15:46 / 修改时间：17:06:54" itemprop="dateCreated datePublished" datetime="2026-03-06T16:15:46+08:00">2026-03-06</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -361,8 +361,23 @@ mjx-container[display="true"] + br {
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>conda是一款开源的包管理与环境管理工具。它不仅能轻松安装、更新、卸载 Python 库，更能创建相互隔离的虚拟环境，确保不同项目使用不同版本的依赖，从而避免版本冲突。无论是数据分析、机器学习还是日常开发，Conda 都是高效管理开发环境的利器。</p>
+          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>conda</strong>是一款开源的包管理与环境管理工具。它不仅能轻松安装、更新、卸载 Python 库，更能创建相互隔离的虚拟环境，确保不同项目使用不同版本的依赖，从而避免版本冲突。无论是数据分析、机器学习还是日常开发，Conda 都是高效管理开发环境的利器。</p>
 <p>对于初学者，建议安装更轻量的 <strong>Miniconda</strong>，它已完全覆盖日常开发的核心需求。</p>
+<h2 id="一、-Conda-的安装"><a href="#一、-Conda-的安装" class="headerlink" title="一、 Conda 的安装"></a>一、 Conda 的安装</h2><p>在正式安装前，请明确你的开发需求：</p>
+<ul>
+<li><strong>VS Code 用户</strong>：Conda 是 Python 开发的必备工具。</li>
+<li><strong>PyCharm 用户</strong>：PyCharm 内置了 <code>venv</code>，若偏好使用 Conda，可在创建项目时选择 Conda 环境，软件会自动指引完成安装。</li>
+</ul>
+<h3 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h3><ol>
+<li><strong>下载安装包</strong>：访问 <a target="_blank" rel="noopener" href="https://www.anaconda.com/download">Anaconda 官网</a> 进行下载（需注册账号，建议使用 GitHub 快速登录）。</li>
+<li><strong>初始化配置</strong>：安装过程中，若提示「是否在终端默认初始化」，请务必选择 <strong>Yes</strong>。</li>
+<li><strong>环境变量</strong>：确保安装程序已将 Miniconda 的路径添加到系统环境变量中。</li>
+</ol>
+<h3 id="验证安装"><a href="#验证安装" class="headerlink" title="验证安装"></a>验证安装</h3><p>打开终端（Windows 可按 <code>Win + R</code> 输入 <code>cmd</code>），若命令行路径前出现 <code>(base)</code> 标识，即表示安装成功。若未显示，可尝试手动运行 <code>conda activate</code> 激活。</p>
+<blockquote>
+<p><strong>提示</strong>：Windows 系统拥有多种终端（如 PowerShell, CMD）。若在 VS Code 的集成终端中未显示 <code>(base)</code>，请点击终端面板右上角的下拉箭头，切换不同的终端类型尝试。</p>
+</blockquote>
+<hr>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2026/03/06/%E5%B0%8F%E7%99%BD%E9%83%BD%E8%83%BD%E6%87%82%E7%9A%84conda%E6%95%99%E7%A8%8B/#more" rel="contents">
