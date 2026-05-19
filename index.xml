@@ -11,36 +11,6 @@
     <guid>https://waliwuao.github.io/</guid>
     <description><![CDATA[  你好，我是 WaliWuao GitHub：github.com/waliwuao 邮件联系：1276672206@qq.com 2 关于我 我是 Waliwuao， 目前就读于SUSTech的计算机科学与工程系， 同时也在Robocon ARES战队做算法设计 天生体育废体，偶尔逛逛海岸线，不社恐，但有时会社交疲劳。 曾有轻度猫瘾，现有所改善 Contact Me 如果你有任何问题，或者想针对某个技术话题进行交流，欢迎通过以下渠道找到我。 Email:1276672206@qq.com qq:1276672206 我困的时候会睡觉 最后更新于：2026年4月 . ]]></description>
     <pubDate>Tue, 19 May 2026 08:53:44 GMT</pubDate>
-  </item><item>
-    <title>Lecture 4: Plugin与Pipeline的实现</title>
-    <link>https://waliwuao.github.io/Zero-to-VexRiscv/Lecture4</link>
-    <guid>https://waliwuao.github.io/Zero-to-VexRiscv/Lecture4</guid>
-    <description><![CDATA[ 上一讲我们完成了 Stage 和 Stageable 的设计，它们是流水线的“骨骼”和“标签”。现在我们有了可以挂载信号的线站，但还没有一种统一的方式去组织这些线站，并把散落的信号连成一串真正的流水线。今天我们要做的就是这件事——引入 Plugin 和 Pipeline。 为什么需要 Plugin？ 在传统的硬件设计里，我们可能会直接在一个顶层模块里把取指、译码、执行、写回等逻辑全部堆进去。这样做的缺点是：一旦你想为不同配置生成不同的 CPU（比如带/不带乘法器、带/不带分支预测），代码就会变得臃肿且难以维护。 VexRiscv 的做法是把每个功能模块（译码器、ALU、寄存器堆、跳转处理…）都... ]]></description>
-    <pubDate>Tue, 05 May 2026 16:00:00 GMT</pubDate>
-  </item><item>
-    <title>Lecture 2: VexRiscv核心架构</title>
-    <link>https://waliwuao.github.io/Zero-to-VexRiscv/Lecture2</link>
-    <guid>https://waliwuao.github.io/Zero-to-VexRiscv/Lecture2</guid>
-    <description><![CDATA[ VexRiscv 基本设计理念 VexRiscv 并不是一个传统意义上用Verilog或Chisel编写的固定CPU 核心，而是一个基于 SpinalHDL 的模块化 CPU 架构框架。 其核心设计哲学是：将硬件执行逻辑（Logic）与流水线物理结构（Structure）彻底解耦。 传统的 CPU 设计通常使用一个巨大的数据结构（如 Bundle 或 Struct）作为“总线”，在各级流水线之间传递信号。这种模式下，硬件组件之间相互依赖： 修改成本高：若要增加一个信号，必须手动修改每一级流水线的接口定义。 连线冗余：即使某个信号只在第一级和第五级使用，你也必须在中间的第二、三、四级手动编写“过... ]]></description>
-    <pubDate>Tue, 28 Apr 2026 16:00:00 GMT</pubDate>
-  </item><item>
-    <title>Lecture 3: Stage设计</title>
-    <link>https://waliwuao.github.io/Zero-to-VexRiscv/Lecture3</link>
-    <guid>https://waliwuao.github.io/Zero-to-VexRiscv/Lecture3</guid>
-    <description><![CDATA[ 在这一讲中，我们将会正式开始实现代码，我们会从最简单的Stage和Stageable开始。你不需要有scala的基础，我们会在实战中学习scala的语法，scala和java非常相似，所以你无需担心。 首先，我们要澄清一个可能的误解： 我们想要传输一个Data_A,Data_A由Stage_A创建，发送给Stage_B。由上一讲的知识我们知道，肯定有一个Stageable_A与Data_A绑定，那么请问整个流水线上总共有几个Stageable_A? 答案是两个，Stage_A和Stage_B各持有一个，每一个Stage持有的Stageable都指向自己储存对应信号的信号槽 如图，为了传递Dat... ]]></description>
-    <pubDate>Tue, 28 Apr 2026 16:00:00 GMT</pubDate>
-  </item><item>
-    <title>Lecture 1: SpinalHDL环境搭建</title>
-    <link>https://waliwuao.github.io/Zero-to-VexRiscv/Lecture1</link>
-    <guid>https://waliwuao.github.io/Zero-to-VexRiscv/Lecture1</guid>
-    <description><![CDATA[ 在上一篇教程中，我枚举了在使用verilog进行硬件开发时遇到了种种困难，在这篇教程里，我会讲解为什么选择使用Scala &amp; SpinalHDL来实现VexRiscv，以及如何配置Scala &amp; SpinalHDL的开发环境。 首先需要澄清一个概念：SpinalHDL 不是一门新的编程语言。 它本质上是 Scala 语言的一个硬件描述库（Library）。Scala 是一门运行在 Java 虚拟机（JVM）上的高级编程语言，它完美融合了面向对象（OOP）和函数式编程（FP）的特性。 这就带来了一个降维打击般的优势：你可以用写现代高级软件的方式，来生成底层的硬件电路。 VexRi... ]]></description>
-    <pubDate>Thu, 23 Apr 2026 16:00:00 GMT</pubDate>
-  </item><item>
-    <title>Lecture 0: Project 前言</title>
-    <link>https://waliwuao.github.io/Zero-to-VexRiscv/Lecture0</link>
-    <guid>https://waliwuao.github.io/Zero-to-VexRiscv/Lecture0</guid>
-    <description><![CDATA[ 在数字逻辑课程的学习中，我完成了一个“简单”的小项目：直接编写 Verilog，在开发板上实现一个矩阵乘法计算器。在熬了几个大夜后，我终于可以肯定，这绝对是我写过的最为糟糕的项目。 项目完成后，我反思了其中的原因： 代码膨胀失控 虽然采用了结构化设计，但在实现过程中，代码仍然容易变得冗长繁琐。在矩阵乘法计算器的实现中，我和队友把状态机直接写进了 top 模块，到项目结束时，该模块的代码行数竟高达 2000 多行，严重影响了代码的可维护性。 抽象层次不足 Verilog 本身更偏向于寄存器传输级描述，缺乏高级抽象机制。直接编写 Verilog 时，很容易陷入细节泥潭，代码的模块化程度受限于语言本... ]]></description>
-    <pubDate>Mon, 20 Apr 2026 16:00:00 GMT</pubDate>
   </item>
     </channel>
   </rss>
