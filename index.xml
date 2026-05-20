@@ -6,10 +6,10 @@
       <description>Last 10 notes on Wally Hao</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
-    <title>Python 环境管理指南</title>
+    <title>Python 环境管理指南：从 pip 到 uv</title>
     <link>https://waliwuao.github.io/%E4%BB%8E-Hello-World-%E5%88%B0%E9%A1%B9%E7%9B%AE%E5%B7%A5%E7%A8%8B%E5%8C%96/Lecture1</link>
     <guid>https://waliwuao.github.io/%E4%BB%8E-Hello-World-%E5%88%B0%E9%A1%B9%E7%9B%AE%E5%B7%A5%E7%A8%8B%E5%8C%96/Lecture1</guid>
-    <description><![CDATA[  ]]></description>
+    <description><![CDATA[ 引言 在 上一篇文章 中，我们通过「计算器项目」的演进，理解了文件结构设计的重要性。但还有一个更基础的问题——代码运行在什么样的环境里？ 你和同学明明用的是同一个项目，但他运行时报错你却复现不了；你三年前写的脚本，换个电脑就跑不起来了。这些问题的根源，都在于环境不一致。 本文将带你理解 Python 环境管理的核心概念，并最终聚焦于新一代工具 uv——它比 pip 更快，比 conda 更轻，是现代 Python 项目环境管理的首选。 阅读前提：你已经能用 python main.py 运行脚本，对终端命令行有基本概念。 第一部分：为什么需要环境管理？ 一个经典翻车现场的还原 你在 Lectu... ]]></description>
     <pubDate>Tue, 19 May 2026 16:00:00 GMT</pubDate>
   </item><item>
     <title>About</title>
