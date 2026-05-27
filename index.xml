@@ -6,6 +6,12 @@
       <description>Last 10 notes on Wally Hao</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
+    <title>项目版本管理指南：Git 与 GitHub Flow</title>
+    <link>https://waliwuao.github.io/%E4%BB%8E-Hello-World-%E5%88%B0%E9%A1%B9%E7%9B%AE%E5%B7%A5%E7%A8%8B%E5%8C%96/Lecture2</link>
+    <guid>https://waliwuao.github.io/%E4%BB%8E-Hello-World-%E5%88%B0%E9%A1%B9%E7%9B%AE%E5%B7%A5%E7%A8%8B%E5%8C%96/Lecture2</guid>
+    <description><![CDATA[ 引言 在前面两篇文章中，我们完成了计算器项目的文件结构设计和环境管理配置。但还有一件事悬而未决——你怎么保存这个项目的迭代历史？ 目前你的工作流可能是这样的：项目改了一点 → 另存为 calculator_v2.py → 又改了 → calculator_final.py → 又改了 → calculator_final_real.py。一周后，面对满屏幕的 final、v3、backup，你已经不知道哪个版本才是「真的能跑的那个」。 版本控制系统（Version Control System，VCS） 就是为解决这个问题而生的。它像一台时光机，让你随时回到项目的任何一个历史时刻、对比任意两个... ]]></description>
+    <pubDate>Wed, 20 May 2026 16:00:00 GMT</pubDate>
+  </item><item>
     <title>Python 环境管理指南</title>
     <link>https://waliwuao.github.io/%E4%BB%8E-Hello-World-%E5%88%B0%E9%A1%B9%E7%9B%AE%E5%B7%A5%E7%A8%8B%E5%8C%96/Lecture1</link>
     <guid>https://waliwuao.github.io/%E4%BB%8E-Hello-World-%E5%88%B0%E9%A1%B9%E7%9B%AE%E5%B7%A5%E7%A8%8B%E5%8C%96/Lecture1</guid>
